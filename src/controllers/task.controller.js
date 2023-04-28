@@ -43,6 +43,7 @@ tasksCtrl.renderTasks = async (req, res) => {
 
 
 
+
 tasksCtrl.deleteLink = async (req, res) => {
     const { id } = req.params;
     await pool.query('DELETE FROM tasks WHERE ID = ?', [id]);

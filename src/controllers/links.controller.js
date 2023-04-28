@@ -26,13 +26,18 @@ linksCtrl.addLink = async (req, res) => {
 }
 
 linksCtrl.renderLinks = async (req, res) => {
-    const links = await pool.query('SELECT * FROM links WHERE user_id = 20', [req.user.id]);
+    const links = await pool.query('SELECT * FROM links ', [req.user.id]);
     res.render('links/list', { links });
 }
 
 linksCtrl.renderTasks = async (req, res) => {
     const tasks = await pool.query('SELECT * FROM tasks WHERE  done =1 and respuesta_medico is  null', [req.user.id]);
     res.render('links/tasks', { tasks });
+}
+
+linksCtrl.renderTasks_todas = async (req, res) => {
+    const tasks_todas = await pool.query('SELECT * FROM tasks', [req.user.id]);
+    res.render('links/tasks_todas', { tasks_todas });
 }
 
 linksCtrl.editTask = async (req,res) => {
@@ -52,7 +57,7 @@ linksCtrl.editTask = async (req,res) => {
 
 linksCtrl.renderEditTask = async (req, res) => {
     const { id } = req.params;
-    const tasks = await pool.query('SELECT * FROM tasks WHERE id = ?', [id]);
+    const tasks = await pool.query('SELECT * FROM tasks', [id]);
     console.log(tasks);
     res.render('links/edit_task', {tasks: tasks[0]});
 };
