@@ -17,7 +17,7 @@ router.get('/', isLoggedIn, renderLinks);
 router.get('/tasks', isLoggedIn, renderTasks);
 
 router.get('/tasks_todas', isLoggedIn, renderTasks_todas);
-
+router.get('/grafica');
 router.get('/edit_task/:id', renderEditTask);
 router.post('/edit_task/:id', editTask);
 
