@@ -3,25 +3,31 @@ const router = express.Router();
 
 const { isLoggedIn } = require('../lib/auth');
 
-const {renderEditTask,editTask, renderAddLink,renderTasks,renderTasks_todas, addLink, renderLinks, deleteLink, editLink, renderEditLink,editLink_egreso,renderEditLink_egreso,renderLinks_admin,renderLinks_ocupadas,renderLinks_sedes_disponible,renderLinks_observacion,renderLinks_hospitalario,renderLinks_todas_guajira,renderLinks_sedes_disponible_cesar,renderLinks_observacion_magdalena} = require('../controllers/links.controller');
+const {renderMedicamentos,renderEditTask,editTask, renderAddLink,renderTasks,renderTasks_todas, addLink, renderLinks, deleteLink, editLink, renderEditLink,editLink_egreso,renderEditLink_egreso,renderLinks_admin,renderLinks_ocupadas,renderLinks_sedes_disponible,renderLinks_observacion,renderLinks_hospitalario,renderLinks_todas_guajira,renderLinks_sedes_disponible_cesar,renderLinks_observacion_magdalena,} = require('../controllers/links.controller');
+
 
 
 // Authorization
 router.use(isLoggedIn);
 
-// Routes
+// Routes task
 router.get('/add', renderAddLink);
 router.post('/add', addLink);
 router.get('/', isLoggedIn, renderLinks);
-
 router.get('/tasks', isLoggedIn, renderTasks);
-
 router.get('/tasks_todas', isLoggedIn, renderTasks_todas);
 router.get('/grafica');
 router.get('/edit_task/:id', renderEditTask);
 router.post('/edit_task/:id', editTask);
 
+// Routes medicamentos
 
+router.get('/list_medicamentos', isLoggedIn, renderMedicamentos);
+
+
+
+
+// Routes link
 
 router.get('/list_todas', isLoggedIn, renderLinks_admin);
 router.get('/list_magdalena', isLoggedIn, renderLinks_observacion);

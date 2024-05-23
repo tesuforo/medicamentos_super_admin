@@ -75,6 +75,13 @@ linksCtrl.renderLinks_admin = async (req, res) => {
 
 
 
+linksCtrl.renderMedicamentos = async (req, res) => {
+    const medicamentos = await pool.query('SELECT * FROM medicamentos', );
+    res.render('links/list_medicamentos', { medicamentos });
+}
+
+
+
 linksCtrl.renderLinks_hospitalario = async (req, res) => {
     const links_hospitalario = await pool.query('SELECT * FROM links WHERE user_id = 20', [req.user.id]);
     res.render('links/list_hospitalario', { links_hospitalario });
