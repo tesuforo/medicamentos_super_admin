@@ -1,0 +1,166 @@
+
+<div>
+
+
+</div>
+
+
+        <div class="row g-3">
+
+            <div class="card text-dark bg-light mb-3">
+                <div class="card-body">
+
+                         
+                    <h2 class="card-title">Recetario Original</h2>      
+                    <form action="/links/formula" method="POST">
+
+                     <div class="form-group">
+                                    <label for="nacimiento">Fecha de formula<small></small></label>
+                                    <input type="date" id="fecha"  name="fecha"  {{formula.fecha}}>
+                                </div>
+
+                        <div class="form-group">
+                              <label className="block" htmlFor="departamento">Numero de factura*</label>
+                            <input type="text" id="numeroDocumento" name="numeroDocumento"  {{formula.numeroDocumento}} placeholder="Numero de Documento">
+                        </div>
+
+                            <div class="form-group">
+                              <label className="block" htmlFor="departamento">Numero de Documento*</label>
+                            <input type="text" id="documentoPaciente" name="documentoPaciente"  {{formula.documentoPaciente}} placeholder="Numero de Documento">
+                        </div>
+
+                            <div class="form-group">
+                                        <h4><span class="label label-default">Tipo Doc </span></h4>
+                        <select class="form-control" name="tipoDocPaciente" id="tipoDocPaciente" {{formula.tipoDocPaciente}}>
+                           
+                            <option value="CC">CC</option>
+                            <option value="CE">CE</option>
+                            <option value="TI">TI</option>
+                        </select>
+                           </div>
+
+                         
+                           <div class="form-group">
+                            <span id="passwordHelpInline" class="form-text">
+                          Javier  Garcia
+                       </span>
+                        </div>
+
+                         <div class="form-group">
+                            <span id="passwordHelpInline" class="form-text">
+                          Edad :32
+                       </span>
+                        </div>
+
+                         <div class="form-group">
+                            <span id="passwordHelpInline" class="form-text">
+                          Sexo :M
+                       </span>
+                        </div>
+
+                        <div class="form-group">
+                            <span id="passwordHelpInline" class="form-text">
+                         Direccion
+                       </span>
+                        </div>
+
+                        <div class="form-group">
+                            <span id="passwordHelpInline" class="form-text">
+                         Ubicacion
+                       </span>
+                        </div>
+
+                        <div class="form-group">
+                            <span id="passwordHelpInline" class="form-text">
+                         clase 1
+                       </span>
+                        </div>
+
+                        <div class="form-group">
+                            <span id="passwordHelpInline" class="form-text">
+                         regimen  Subsidiado Tota Episodio: 64884854
+                       </span>
+                        </div>
+
+                         <div class="form-group">
+                            <span id="passwordHelpInline" class="form-text">
+                         aseguradora COMPENSAR REGIMEN SUBSIDIADO-RS
+                       </span>
+                        </div>
+
+
+
+                           <div class="form-group">
+                            <span id="passwordHelpInline" class="form-text">
+                          Reclamar en la institución o Farmacia: EVE DISTRIBUCION
+                       </span>
+                        </div>
+                    
+
+
+
+                        <div class="form-group">
+                   
+  <div class="form-group">
+                    <h5 <span class="label label-default">Dx Principal</span></h5>
+                           <div class="form-group">
+                                <select class="form-control" name="idDiagnostico" id ="idDiagnostico" placeholder="Laboratorio"{{formula.idDiagnostico}}>
+                             <option value="No Aplica">No Aplica</option>
+                        </select>
+                </div>
+
+
+
+
+<h5 <span class="label label-default"> origen de la atencion </span></h5>
+                           <div class="form-group">
+                                <select class="form-control" name="origen_atencion" id="origen_atencion" placeholder="Laboratorio"{{formula.origen_atencion}}>
+                             <option value="No Aplica">No Aplica</option>
+                        </select>
+                </div>
+
+               
+                </div>
+
+                   <h4><span class="label label-default">Medicamento </span></h4>
+                        <select class="form-control" name="detalleAutorizacion" id="detalleAutorizacion" {{formula.detalleAutorizacion}}>
+                           
+                            <option value="Acetaminofen">Acetaminofen</option>
+                            <option value="Disponible.">Disponible.</option>
+                            <option value="Poca existencia.">Poca Existencia</option>
+                        </select>
+
+
+
+                        
+
+
+                       <div class="form-group">
+                        <label className="block" htmlFor="departamento">Observaciones</label>
+                            <textarea name="url" rows="2" class="form-control"
+                                placeholder="Observaciones">{{formula.observaciones}}</textarea>
+                        </div>
+                <h4> <span class="label label-default"></span></h4>
+
+<hr class="my-4">
+
+
+<div class="jumbotron text-center">
+
+    <h3>Registro Medico : {{user.username}}</h3>
+    <h3>Medico : {{user.fullname}}</h3>
+
+
+  </div>
+                
+               <div class="form-group">
+                    <button class="btn btn-success btn">
+                        Guardar
+                    </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+

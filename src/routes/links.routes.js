@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { isLoggedIn } = require('../lib/auth');
 
-const {renderMedicamentos,renderEditTask,editTask, renderAddLink,renderTasks,renderTasks_todas, addLink, renderLinks, deleteLink, editLink, renderEditLink,editLink_egreso,renderEditLink_egreso,renderLinks_admin,renderLinks_ocupadas,renderLinks_sedes_disponible,renderLinks_observacion,renderLinks_hospitalario,renderLinks_todas_guajira,renderLinks_sedes_disponible_cesar,renderLinks_observacion_magdalena,} = require('../controllers/links.controller');
+const {renderFormulas,renderMedicamentos,addFormula,renderEditTask,editTask, renderAddLink,renderTasks,renderTasks_todas, addLink, renderLinks, deleteLink, editLink, renderEditLink,editLink_egreso,renderEditLink_egreso,renderLinks_admin,renderLinks_ocupadas,renderLinks_sedes_disponible,renderLinks_observacion,renderLinks_hospitalario,renderLinks_todas_guajira,renderLinks_sedes_disponible_cesar,renderLinks_observacion_magdalena, renderAddFormula,} = require('../controllers/links.controller');
 
 
 
@@ -23,6 +23,9 @@ router.post('/edit_task/:id', editTask);
 // Routes medicamentos
 
 router.get('/list_medicamentos', isLoggedIn, renderMedicamentos);
+router.post('/formula', addFormula);
+router.get('/formula', renderAddFormula);
+router.get('/list_formulas', isLoggedIn, renderFormulas);
 
 
 

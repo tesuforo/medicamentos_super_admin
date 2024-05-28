@@ -63,11 +63,6 @@ linksCtrl.renderEditTask = async (req, res) => {
 };
 
 
-
-
-
-
-
 linksCtrl.renderLinks_admin = async (req, res) => {
     const links_admin = await pool.query('SELECT * FROM links WHERE user_id = 20', [req.user.id]);
     res.render('links/list_todas', { links_admin });
@@ -75,10 +70,55 @@ linksCtrl.renderLinks_admin = async (req, res) => {
 
 
 
+
+
 linksCtrl.renderMedicamentos = async (req, res) => {
     const medicamentos = await pool.query('SELECT * FROM medicamentos', );
     res.render('links/list_medicamentos', { medicamentos });
 }
+
+
+
+linksCtrl.renderAddFormula = (req, res) => {
+    res.render('links/formula');
+};
+
+linksCtrl.addFormula = async (req, res) => {
+    const { fecha, numeroDocumento,tipoDocPaciente,documentoPaciente,idDiagnostico,tipoDocMedico,documentoMedico,detalleAutorizacion,origen_atencion,observaciones} = req.body;
+    const newFormula = {
+        fecha,
+        numeroDocumento,
+        tipoDocPaciente,
+        documentoPaciente,
+        idDiagnostico,
+        tipoDocMedico,
+        documentoMedico,
+        detalleAutorizacion,
+        origen_atencion,
+        observaciones,
+        user_id: req.user.id
+    };
+    await pool.query('INSERT INTO formula set ?', [newFormula]);
+    req.flash('success_msg', 'formula Guardado Satisfactoriamente');
+    res.redirect('/links/list_medicamentos');
+}
+
+
+linksCtrl.renderMedicamentos = async (req, res) => {
+    const medicamentos = await pool.query('SELECT * FROM medicamentos', );
+    res.render('links/list_medicamentos', { medicamentos });
+}
+
+
+linksCtrl.renderFormulas = async (req, res) => {
+    const formulas = await pool.query('SELECT * FROM formula', );
+    res.render('links/list_formulas', { formulas });
+}
+
+
+
+
+
 
 
 
