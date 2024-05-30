@@ -84,16 +84,21 @@ linksCtrl.renderAddFormula = (req, res) => {
 };
 
 linksCtrl.addFormula = async (req, res) => {
-    const { fecha, numeroDocumento,tipoDocPaciente,documentoPaciente,idDiagnostico,tipoDocMedico,documentoMedico,detalleAutorizacion,origen_atencion,observaciones} = req.body;
+    const { fecha,tipoDocPaciente,documentoPaciente,nombre_paciente,edad,sexo,direccion,regimen,aseguradora,farmacia,idDiagnostico,tipoDocMedico,documentoMedico,origen_atencion,observaciones} = req.body;
     const newFormula = {
         fecha,
-        numeroDocumento,
         tipoDocPaciente,
         documentoPaciente,
+        nombre_paciente,
+        edad,
+        sexo,
+        direccion,
+        regimen,
+        aseguradora,
+        farmacia,
         idDiagnostico,
         tipoDocMedico,
         documentoMedico,
-        detalleAutorizacion,
         origen_atencion,
         observaciones,
         user_id: req.user.id

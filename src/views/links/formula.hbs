@@ -18,85 +18,88 @@
                                     <label for="nacimiento">Fecha de formula<small></small></label>
                                     <input type="date" id="fecha"  name="fecha"  {{formula.fecha}}>
                                 </div>
+                          <div class="form-group">
+                                        <h4><span class="label label-default">Tipo Doc </span></h4>
+                        <select class="form-control" name="tipoDocPaciente" id="tipoDocPaciente" {{formula.tipoDocPaciente}}>
+                           
+                            <option value="CC">CC</option>
+                            <option value="CE">NIT</option>
+                            <option value="TI">TI</option>
+                            <option value="CE">CE</option>
+                            <option value="PA">PA</option>
+                            <option value="CD">CD</option>
+                            <option value="RC">RC</option>
+                            <option value="UN">UN</option>
+                            <option value="MS">MS</option>
+                            <option value="CN">CN</option>
+                            <option value="SC">SC</option>
+                            <option value="PE">PE</option>
+                            <option value="AS">AS</option>
+                            <option value="PT">PT</option>
 
-                        <div class="form-group">
-                              <label className="block" htmlFor="departamento">Numero de factura*</label>
-                            <input type="text" id="numeroDocumento" name="numeroDocumento"  {{formula.numeroDocumento}} placeholder="Numero de Documento">
-                        </div>
+
+                        </select>
+                           </div>
+                      
 
                             <div class="form-group">
                               <label className="block" htmlFor="departamento">Numero de Documento*</label>
                             <input type="text" id="documentoPaciente" name="documentoPaciente"  {{formula.documentoPaciente}} placeholder="Numero de Documento">
                         </div>
 
-                            <div class="form-group">
-                                        <h4><span class="label label-default">Tipo Doc </span></h4>
-                        <select class="form-control" name="tipoDocPaciente" id="tipoDocPaciente" {{formula.tipoDocPaciente}}>
+
+                     <div class="form-group">
+                              <label className="block" htmlFor="departamento">Nombre paciente*</label>
+                            <input type="text" id="nombre_paciente" name="nombre_paciente"  {{formula.nombre_paciente}} placeholder="Nombre Paciente">
+                        </div>
+
+
+                      <div class="form-group">
+                              <label className="block" htmlFor="edad">Edad*</label>
+                            <input type="text" id="edad" name="edad"  {{formula.edad}} placeholder="edad">
+                        </div>
+
                            
-                            <option value="CC">CC</option>
-                            <option value="CE">CE</option>
-                            <option value="TI">TI</option>
+                           <div class="form-group">
+                    <h5 <span class="label label-default">Sexo</span></h5>
+                           <div class="form-group">
+                                <select class="form-control" name="sexo" id ="sexo" placeholder="sexo"{{formula.sexo}}>
+                             <option value="M">M</option>
+                             <option value="F">F</option>
                         </select>
-                           </div>
+                </div>
 
-                         
+
+                 <div class="form-group">
+                              <label className="block" htmlFor="direccion">Direccion*</label>
+                            <input type="text" id="direccion" name="direccion"  {{formula.direccion}} placeholder="direccion">
+                        </div>
+
+         <div class="form-group">
+                    <h5 <span class="label label-default">regimen</span></h5>
                            <div class="form-group">
-                            <span id="passwordHelpInline" class="form-text">
-                          Javier  Garcia
-                       </span>
-                        </div>
+                                <select class="regimen" name="regimen" id ="regimen" placeholder="regimen"{{formula.regimen}}>
+                             <option value="Subsidiado">Subsidiado</option>
+                             <option value="Contributivo">Contributivo</option>
+                        </select>
+                </div>
 
-                         <div class="form-group">
-                            <span id="passwordHelpInline" class="form-text">
-                          Edad :32
-                       </span>
-                        </div>
-
-                         <div class="form-group">
-                            <span id="passwordHelpInline" class="form-text">
-                          Sexo :M
-                       </span>
-                        </div>
-
-                        <div class="form-group">
-                            <span id="passwordHelpInline" class="form-text">
-                         Direccion
-                       </span>
-                        </div>
-
-                        <div class="form-group">
-                            <span id="passwordHelpInline" class="form-text">
-                         Ubicacion
-                       </span>
-                        </div>
-
-                        <div class="form-group">
-                            <span id="passwordHelpInline" class="form-text">
-                         clase 1
-                       </span>
-                        </div>
-
-                        <div class="form-group">
-                            <span id="passwordHelpInline" class="form-text">
-                         regimen  Subsidiado Tota Episodio: 64884854
-                       </span>
-                        </div>
-
-                         <div class="form-group">
-                            <span id="passwordHelpInline" class="form-text">
-                         aseguradora COMPENSAR REGIMEN SUBSIDIADO-RS
-                       </span>
-                        </div>
-
-
-
+         <div class="form-group">
+                    <h5 <span class="label label-default">aseguadora</span></h5>
                            <div class="form-group">
-                            <span id="passwordHelpInline" class="form-text">
-                          Reclamar en la institución o Farmacia: EVE DISTRIBUCION
-                       </span>
-                        </div>
-                    
+                                <select class="form-control" name="aseguradora" id ="aseguradora" placeholder="aseguradora"{{formula.aseguradora}}>
+                             <option value=" COMPENSAR REGIMEN SUBSIDIADO-RS"> COMPENSAR REGIMEN SUBSIDIADO-RS</option>
+                        </select>
+                </div>
 
+         <div class="form-group">
+                    <h5 <span class="label label-default">Farmacia</span></h5>
+                           <div class="form-group">
+                                <select class="form-control" name="farmacia" id ="farmacia" placeholder="farmacia"{{formula.farmacia}}>
+                             <option value="EVE DISTRIBUCION">EVE DISTRIBUCION</option>
+                            
+                        </select>
+                </div>
 
 
                         <div class="form-group">
